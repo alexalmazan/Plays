@@ -2,7 +2,7 @@
 ---
 - hosts: all
   sudo: no
-  remote_user: ale00303
+  remote_user: user
   vars:
      esxserver: "{{$hostname}}"
      esxlogin: "{{domain\user}}"
