@@ -1,6 +1,6 @@
 - hosts: test 
   sudo: yes
-  remote_user: ale00303
+  remote_user: user
   tasks:
       - name: Upgrade All Packages Redhat Hosts
         yum: pkg=* state=latest
