@@ -2,10 +2,10 @@
 - hosts: cloudera 
   sudo: "yes"
   gather_facts: "no"
-  remote_user: ale00303
+  remote_user: user
   tasks:
   - copy:
-     src: "/home/ale00303/cloudera"
+     src: "/home/user/cloudera"
      dest: "/etc/sudoers.d/cloudera"
      owner: root
      group: root
