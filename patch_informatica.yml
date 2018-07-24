@@ -2,7 +2,7 @@
 - hosts: informatica 
   sudo: yes
   gather_facts: no 
-  remote_user: ale00303
+  remote_user: user
   tasks:
       - name: Upgrade All Packages Redhat Hosts
         yum: pkg=* state=latest
