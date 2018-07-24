@@ -7,6 +7,6 @@
        local_action:
          module: vmware_vmkernel_ip_config
          hostname: icisr501.echristus.net"
-         username: "ECHRISTUS\ale00303"
-         password: "AixHfsWglh22!"
+         username: "domain\user"
+         password: "$password"
          validate_certs: False
