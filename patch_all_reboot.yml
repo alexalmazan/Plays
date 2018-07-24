@@ -1,0 +1,16 @@
+- hosts: all 
+  sudo: yes
+  gather_facts: yes 
+  remote_user: ale00303
+  tasks:
+  - name: Upgrade All Packages Redhat Hosts
+    yum: pkg=* state=latest
+	
+  - name: Reboot Server 
+    command: /sbin/reboot
+
+ -name: Wait for the server to finish rebooting
+  sudo: no 
+  local_action: wait_for host="{{ inventory_hostname }}" search regex=OpenSSH port=22 delay=60 timeout=200
+  become: false
+  delegate_to: 127.0.0.1

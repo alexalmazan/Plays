@@ -1,0 +1,11 @@
+- name: Network/sysctl settings status
+  become: yes
+  shell: sysctl -a -r {{ item }}
+  register: sysctl
+  with_items:
+    - net.ipv4.conf.all.rp_filter
+    - net.ipv4.conf.default.rp_filter
+    - net.ipv4.icmp_echo_ignore_broadcasts
+    - net.ipv4.conf.all.accept_source_route
+  changed_when: False
+- debug: msg="{{ sysctl.results|map(attribute='stdout')|list }}"

@@ -1,0 +1,16 @@
+# vim:ft=ansible:
+---
+- hosts: all
+  sudo: no
+  remote_user: ale00303
+  vars:
+     esxserver: "{{icisr501.echristus.net}}"
+     esxlogin: "{{ECHRISTUS\ale00303}}"
+     password: "{{chri5tu51!}}"
+     inventory_hostname_short: "{{/etc/ansible/hosts}}"
+     local_action: |
+           vsphere_facts host=$esxserver login=$esxlogin
+           password=$esxpassword guest=$inventory_hostname_short
+     only_if: "'$cmdb_hwmodel'.startswith('VMWare ')"
+     validate_certs: false
+...

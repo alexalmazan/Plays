@@ -1,0 +1,12 @@
+---
+- hosts: informatica-qa
+  sudo: "yes"
+  gather_facts: "no"
+  remote_user: ale00303
+  tasks:
+  - copy:
+     src: "/home/ale00303/scomsudoers3"
+     dest: "/etc/sudoers.d/scomsudoers"
+     owner: root
+     group: root
+     mode: 0644

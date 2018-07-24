@@ -1,0 +1,12 @@
+---
+- hosts: cloudera-prod 
+  sudo: "yes"
+  gather_facts: "no"
+  remote_user: ale00303
+  tasks:
+  - copy:
+     src: "/etc/munin/munin-node.conf"
+     dest: "/etc/munin/munin-node.conf"
+     owner: root
+     group: root
+     mode: 0644

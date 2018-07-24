@@ -1,0 +1,14 @@
+- hosts: wiki 
+  remote_user: ale00303
+  serial: "25%"
+  sudo: yes
+  tasks:
+    - name: Update OpenSSL and OpenSSH (RedHat)
+      yum: name={{ item }}
+           state=latest
+           update_cache=yes
+      with_items:
+        - openssl
+        - openssh-client
+        - openssh-server
+      when: ansible_os_family == "RedHat"

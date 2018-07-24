@@ -1,0 +1,7 @@
+- hosts: wiki 
+  sudo: yes
+  gather_facts: yes 
+  remote_user: ale00303
+  tasks:
+  - name: Upgrade All Packages
+    yum: pkg=* state=latest

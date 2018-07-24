@@ -1,0 +1,30 @@
+---
+- hosts: misc
+  name: Install SCOM2016 scx/omi
+  become: "yes"
+
+  tasks:
+    - name: remove scx
+      yum:
+        name: scx
+        state: absent
+
+    - name: install omi 
+      yum:
+        name: omi.x86_64
+        state: present
+
+    - name: install scx 
+      yum:
+        name: scx.x86_64
+        state: present
+
+    - name: start OMI/SCX
+      service:
+        name: omi
+        state: started
+
+    - name: List SCX/OMI packages and register result
+      yum:
+        list: omi
+        register: result

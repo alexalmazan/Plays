@@ -1,0 +1,8 @@
+#ghostpatch.yml
+- hosts: wiki
+  remote_user: ale00303
+  sudo: yes
+  tasks:
+- name: ensure glibc is latest
+yum: name=glibc state=latest
+when: ansible_os_family == "Redhat"

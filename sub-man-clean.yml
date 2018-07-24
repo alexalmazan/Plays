@@ -1,0 +1,19 @@
+- hosts: misc 
+  sudo: yes
+  gather_facts: no 
+  remote_user: ale00303
+  tasks:
+  - name: subscription-manager clean & activation key to satellite 
+    shell: subscription-manager clean && subscription-manager register --org="IM" --activationkey="CHRISTUS_Activation_Key"
+    async: 1
+    poll: 0
+    ignore_errors: true
+
+# - name: wait for server to come back
+#      local_action: wait_for
+#      args:
+#        host: "{{ inventory_hostname }}"
+#        port: 22
+#        state: started
+#	delay: 30
+#        timeout: 300

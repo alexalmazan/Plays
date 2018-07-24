@@ -1,0 +1,12 @@
+-
+ 
+   hosts: cpacs 
+   tasks:
+
+     - name: Gather facts on virtual machines
+       local_action:
+         module: vmware_vm_facts
+         hostname: icisr501.echristus.net"
+         username: "ECHRISTUS\ale00303"
+         password: "AixHfsWglh22!"
+         validate_certs: False

@@ -1,0 +1,7 @@
+---
+- hosts: cloudera-prod
+  sudo: yes
+  gather_facts: yes #IMPORTANT
+  remote_user: ale00303
+  roles:
+    - epel-repo_rhel7

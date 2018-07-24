@@ -1,0 +1,12 @@
+---
+- hosts: cloudera-prod 
+  sudo: "yes"
+  gather_facts: "no"
+  remote_user: ale00303
+  tasks:
+  - copy:
+     src: "/home/ale00303/vmware-tools.repo"
+     dest: "/etc/yum.repos.d/vmware-tools.repo"
+     owner: root
+     group: root
+     mode: 0644

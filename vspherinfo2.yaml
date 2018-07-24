@@ -1,0 +1,18 @@
+# vim:ft=ansible:
+---
+hosts: all
+vars:
+  esxserver: "{{icisr501.echristus.net}}"
+  esxlogin: "{{ECHRISTUS\ale00303}}"
+  password: "{{chri5tu51!}}"
+  inventory_hostname_short: "{{/etc/ansible/hosts}}"
+  gather_facts: true
+tasks:
+  module: vsphere_facts
+  options:
+  host: $esxserver
+  login: $esxlogin
+  password: $password
+  guests: $inventory_hostname_short
+  validate_certs: false
+...

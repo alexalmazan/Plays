@@ -1,0 +1,11 @@
+---
+  - 
+   name: "Perform vMotion of VM"
+   local_action:
+     destination_host: icvmr150.echristus.net
+     hostname: icisr501.echristus.net
+     module: vmware_vmotion
+     password: AixHfsWglh2!
+     username: ale00303
+     validate_certs: false
+     vm_name: ICSR041

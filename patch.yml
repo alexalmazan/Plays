@@ -1,0 +1,5 @@
+- hosts: security 
+  user: root
+  tasks:
+  - name: Upgrade All Packages
+    yum: pkg=* state=latest
