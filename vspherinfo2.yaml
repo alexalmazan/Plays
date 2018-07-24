@@ -2,9 +2,9 @@
 ---
 hosts: all
 vars:
-  esxserver: "{{icisr501.echristus.net}}"
-  esxlogin: "{{ECHRISTUS\ale00303}}"
-  password: "{{chri5tu51!}}"
+  esxserver: "{{$hostname}}"
+  esxlogin: "{{domain\user}}"
+  password: "{{$password
   inventory_hostname_short: "{{/etc/ansible/hosts}}"
   gather_facts: true
 tasks:
