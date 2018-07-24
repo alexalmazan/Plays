@@ -5,8 +5,8 @@
      name: "gather facts on vms"
      tasks:
       local_action:
-      hostname: icisr501.echristus.net
+      hostname: $esxserver
       module: vmware_vm_facts
-      password: AixHfsWglh22!
-      username: ale00303
+      password: $password
+      username: $user
       validate_certs: false
