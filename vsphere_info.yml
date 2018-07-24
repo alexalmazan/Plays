@@ -6,7 +6,7 @@
   vars:
      esxserver: "{{icisr501.echristus.net}}"
      esxlogin: "{{ECHRISTUS\ale00303}}"
-     password: "{{chri5tu51!}}"
+     password: "{{$password}}"
      inventory_hostname_short: "{{/etc/ansible/hosts}}"
      local_action: |
            vsphere_facts host=$esxserver login=$esxlogin
