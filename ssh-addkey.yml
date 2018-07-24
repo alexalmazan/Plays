@@ -1,8 +1,8 @@
 ---
-- name: "setup authorized_keys for the ea.ale00303 user" 
+- name: "setup authorized_keys for the $user user" 
   hosts: all
   sudo: yes
   gather_facts: no
-  remote_user: ale00303
+  remote_user: username
   tasks:
-  - authorized_key: user=ale00303  key="{{ lookup('file', '/home/ale00303/.ssh/id_rsa.pub') }}" state=present
+  - authorized_key: user=username  key="{{ lookup('file', '/home/user/.ssh/id_rsa.pub') }}" state=present
