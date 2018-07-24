@@ -1,5 +1,5 @@
 - hosts: wiki 
-  remote_user: ale00303
+  remote_user: $user
   serial: "25%"
   sudo: yes
   tasks:
