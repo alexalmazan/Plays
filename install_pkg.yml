@@ -1,16 +1,12 @@
 ---
 
-- hosts: $hostname 
-
-	 name: install ntp
-	 yum: name=ntp state= installed update_cache=yes
-
-	name: write our ntp.conf
-	 copy: src=/home/user/files/ntp.conf dest=/etc/ntp.conf mode=644 owner=root group=root
-	
-	name: start ntp
-	service: name=ntp state=started
-
-	handlers:
-	name: restart ntp
-	 service: name=ntp state=restarted
+- hosts: $hostname
+name: install ntp
+yum: name=ntp state= installed update_cache=yes
+name: write our ntp.conf
+copy: src=/home/user/files/ntp.conf dest=/etc/ntp.conf mode=644 owner=root group=root
+name: start ntp
+service: name=ntp state=started
+handlers:
+name: restart ntp
+service: name=ntp state=restarted
