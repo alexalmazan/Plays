@@ -1,10 +1,4 @@
-#- hosts: sas 
-#  sudo: yes
-# gather_facts: yes 
-#  remote_user: ale00303
-# tasks:
-#  - name: Upgrade All Packages
-#    yum: pkg=* state=latest
+---
 - hosts: sas 
   sudo: yes
   remote_user: user
