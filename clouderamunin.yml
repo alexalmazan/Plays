@@ -2,7 +2,7 @@
 - hosts: cloudera-prod 
   sudo: "yes"
   gather_facts: "no"
-  remote_user: ale00303
+  remote_user: user
   tasks:
   - copy:
      src: "/etc/munin/munin-node.conf"
